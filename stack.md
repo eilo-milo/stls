@@ -5,12 +5,12 @@
 
 ## 1. What is a Stack? (Container Adaptor)
 
-In C++ STL, `std::stack` is classified as a **Container Adaptor** (Container Adapter) [00:06].
+In C++ STL, `std::stack` is classified as a **Container Adaptor** (Container Adapter).
 
-* **Container Adaptor Concept:** It is not an independent underlying data structure built from scratch; rather, it wraps an underlying sequence container (by default `std::deque`, though `std::vector` or `std::list` can also be used) and restricts its interface to provide a specialized behavior [00:23].
-* **LIFO Principle:** It strictly follows **LIFO** (Last In, First Out) [01:09].
-* **Single Point of Access:** You can only push elements to and pop elements from one designated end, known as the **top** [01:37].
-* **No Iterators or Indexing:** A stack does not support random access (`s[i]`), pointer arithmetic, or iterators (`begin()`, `end()`). You can only inspect the element currently residing at the top [01:46].
+* **Container Adaptor Concept:** It is not an independent underlying data structure built from scratch; rather, it wraps an underlying sequence container (by default `std::deque`, though `std::vector` or `std::list` can also be used) and restricts its interface to provide a specialized behavior .
+* **LIFO Principle:** It strictly follows **LIFO** (Last In, First Out) .
+* **Single Point of Access:** You can only push elements to and pop elements from one designated end, known as the **top** .
+* **No Iterators or Indexing:** A stack does not support random access (`s[i]`), pointer arithmetic, or iterators (`begin()`, `end()`). You can only inspect the element currently residing at the top.
 
 ---
 
@@ -40,11 +40,11 @@ All core member functions operate in $O(1)$ constant time:
 
 | Function | Description |
 | :--- | :--- |
-| `push(val)` | Pushes an element onto the top of the stack [01:25]. |
+| `push(val)` | Pushes an element onto the top of the stack . |
 | `emplace(args...)` | Constructs an element directly at the top in-place. |
-| `pop()` | Removes the top element (returns `void`) [01:37]. |
-| `top()` | Returns a reference to the top element [01:46]. |
-| `empty()` | Returns `true` if the stack has no elements, `false` otherwise [06:41]. |
+| `pop()` | Removes the top element (returns `void`) . |
+| `top()` | Returns a reference to the top element. |
+| `empty()` | Returns `true` if the stack has no elements, `false` otherwise . |
 | `size()` | Returns the number of elements currently stored in the stack. |
 
 ---
