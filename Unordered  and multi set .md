@@ -1,4 +1,6 @@
+# C++ STL `std::unordered_set` & `std::unordered_multiset` Complete Reference Guide
 
+A consolidated technical guide and cheatsheet covering the Standard Template Library (STL) unordered set containers in C++.
 
 ---
 
@@ -16,10 +18,14 @@ Unlike regular `std::set` (which maintains elements in sorted order using a self
 
 * **Hash Function:** Converts an input element/key into a numeric hash code (`std::hash<T>`).
 * **Modulo / Bucket Indexing:** The resulting hash code is mapped to an internal array slot called a **Bucket**:
+  
   $$\text{Bucket Index} = \text{Hash}(x) \pmod{\text{Total Buckets}}$$
+
 * **Collision Handling (Chaining):** Each bucket acts as a linked list (or chain). If two distinct keys map to the same bucket index, they are chained together inside that bucket.
 * **Load Factor:** The average number of elements stored per bucket:
+
   $$\text{Load Factor} = \frac{\text{size}()}{\text{bucket\_count}()}$$
+
   When the load factor exceeds `max_load_factor()`, the container automatically triggers **rehashing** (allocates more buckets and redistributes existing elements).
 
 ---
@@ -136,7 +142,7 @@ int main() {
 
     // 5. Pre-allocating buckets to prevent continuous rehashing
     us.rehash(50);   // Allocates at least 50 buckets
-    us.reserve(100);  // Allocates enough buckets to hold 100 elements without rehashing
+    us.reserve(100); // Allocates enough buckets to hold 100 elements without rehashing
 }
 ```
 
