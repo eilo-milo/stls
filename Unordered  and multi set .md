@@ -19,12 +19,16 @@ Unlike regular `std::set` (which maintains elements in sorted order using a self
 * **Hash Function:** Converts an input element/key into a numeric hash code (`std::hash<T>`).
 * **Modulo / Bucket Indexing:** The resulting hash code is mapped to an internal array slot called a **Bucket**:
   
-  $$\text{Bucket Index} = \text{Hash}(x) \pmod{\text{Total Buckets}}$$
+  ```text
+  Bucket Index = Hash(x) % Total_Buckets
+  ```
 
 * **Collision Handling (Chaining):** Each bucket acts as a linked list (or chain). If two distinct keys map to the same bucket index, they are chained together inside that bucket.
 * **Load Factor:** The average number of elements stored per bucket:
 
-  $$\text{Load Factor} = \frac{\text{size}()}{\text{bucket\_count}()}$$
+  ```text
+  Load Factor = size() / bucket_count()
+  ```
 
   When the load factor exceeds `max_load_factor()`, the container automatically triggers **rehashing** (allocates more buckets and redistributes existing elements).
 
